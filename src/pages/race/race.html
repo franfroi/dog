@@ -1,0 +1,29 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{name}}</ion-title>
+    <ion-buttons end right  >
+        
+                
+        
+                <button ion-button icon-only (click)="closeModal()" >
+                  <ion-icon name="close"></ion-icon>
+                </button>
+        
+            </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+<div id="center">
+    <button ion-button *ngFor="let item of Subrace" (click)="test(item)">{{item}}</button>
+  </div>
+<ion-slides>
+    <ion-slide *ngFor="let item of foto ; let i =index" (ionSlideDidChange)="slideChanged()" (click)="goToSlide()"><img src="{{item}}" alt="" srcset=""><br>image : {{i+1}}</ion-slide> 
+    <ion-slide *ngFor="let item of fotosubrace ; let i =index" (ionSlideDidChange)="slideChanged()" (click)="goToSlide()"><img src="{{item}}" alt="" srcset=""><br>image : {{i+1}}</ion-slide>
+  </ion-slides>
+ 
+</ion-content>
